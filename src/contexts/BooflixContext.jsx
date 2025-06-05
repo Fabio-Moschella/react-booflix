@@ -4,15 +4,16 @@ import axios from "axios";
 const moviesContext = createContext();
 function MoviesProvider({ children }) {
   const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState("Avengers");
 
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/search/movie?api_key=5036c850fa089dc72281fd32b66e7726&query=Avengers"
+        `https://api.themoviedb.org/3/search/movie?api_key=5036c850fa089dc72281fd32b66e7726&query=${query}`
       )
       .then((res) => {
         const response = res.data.results;
-
+        console.log(response);
         setMovies(response);
       });
   }, []);
@@ -20,7 +21,7 @@ function MoviesProvider({ children }) {
     <moviesContext.Provider
       value={{
         movies,
-        setMovies,
+        setQuery,
       }}
     >
       {children}
