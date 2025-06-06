@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useMovies } from "../contexts/BooflixContext";
 
 function SearchBar() {
-  const { FetchMovies } = useMovies();
+  const { FetchMovies, FetchSeries } = useMovies();
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     FetchMovies(searchTerm);
+    FetchSeries(searchTerm);
   };
 
   return (
