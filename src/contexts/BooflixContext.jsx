@@ -4,7 +4,7 @@ import axios from "axios";
 const moviesContext = createContext();
 function MoviesProvider({ children }) {
   const [movies, setMovies] = useState([]);
-  const [query, setQuery] = useState("Avengers");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     axios
@@ -16,11 +16,12 @@ function MoviesProvider({ children }) {
         console.log(response);
         setMovies(response);
       });
-  }, []);
+  }, [query]);
   return (
     <moviesContext.Provider
       value={{
         movies,
+        query,
         setQuery,
       }}
     >

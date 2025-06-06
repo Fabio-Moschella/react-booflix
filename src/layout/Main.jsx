@@ -1,10 +1,10 @@
 import { useMovies } from "../contexts/BooflixContext";
-
 function Main() {
-  const { movies } = useMovies;
+  const { movies } = useMovies();
   return (
     <div className="container">
       {movies.map((movie) => {
+        console.log(movie, "pippo");
         return (
           <>
             <div className="col-4 my-3">
