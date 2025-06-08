@@ -5,13 +5,15 @@ function Main() {
 
   return (
     <div className="container">
-      {movies.map((movie) => {
-        return <BooflixCard media={movie} />;
-      })}
-      <hr />
-      {series.map((serie) => {
-        return <BooflixCard media={serie} />;
-      })}
+      <div className="row">
+        {movies.map((movie) => {
+          return <BooflixCard media={movie} />;
+        })}
+        <hr />
+        {series.map((serie) => {
+          return <BooflixCard media={serie} />;
+        })}
+      </div>
     </div>
   );
 }

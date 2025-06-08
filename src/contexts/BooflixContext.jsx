@@ -16,7 +16,7 @@ function MoviesProvider({ children }) {
         const response = res.data.results;
         const movies = response.map((movie) => ({
           title: movie.title,
-          image: movie.image,
+          image: "https://image.tmdb.org/t/p/w342" + movie.poster_path,
           originaltitle: movie.original_title,
           lang: movie.original_languages,
           rate: movie.vote_average,
@@ -33,12 +33,12 @@ function MoviesProvider({ children }) {
       )
       .then((res) => {
         const response = res.data.results;
-        const tvseries = response.map((movie) => ({
-          title: movie.name,
-          image: movie.poster_path,
-          originaltitle: movie.original_name,
-          lang: movie.original_language,
-          rate: movie.vote_average,
+        const tvseries = response.map((serie) => ({
+          title: serie.name,
+          image: "https://image.tmdb.org/t/p/w342" + serie.poster_path,
+          originaltitle: serie.original_name,
+          lang: serie.original_language,
+          rate: serie.vote_average,
         }));
         console.log(response);
         setSeries(tvseries);
