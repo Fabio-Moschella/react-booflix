@@ -1,3 +1,13 @@
 body {
   background-color: rgba(0, 0, 0, 0.945);
 }
+.img-hover-container .overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.img-hover-container:hover .overlay {
+  opacity: 1;
+}

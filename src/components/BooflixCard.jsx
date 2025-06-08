@@ -14,20 +14,15 @@ function BooflixCard({ media }) {
   };
   return (
     <div className="col-4 my-3">
-      <div className="card bg-black  g-2 ">
-        <img className="card-img" src={media.image} alt="" />
+      <div className="card bg-black position-relative overflow-hidden">
+        <div className="img-hover-container position-relative">
+          <img className="card-img" src={media.image} alt={media.title} />
 
-        <div className="card-body  ">
-          <div className="card-title mb-3">
-            <h1 className="text-danger">{media.title}</h1>
-          </div>
-          <div className="card-subtitle mb-3 text-light">
-            {media.originaltitle}
-          </div>
-          <div className="card-text mb-3 text-light ">{media.lang}</div>
-
-          <div className="card-text mb-3 text-light">
-            {Math.floor(media.rate / 2) + 1}
+          <div className="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-light p-3">
+            <h5 className="text-danger">{media.title}</h5>
+            <div>{media.originaltitle}</div>
+            <div className="my-2">{media.lang}</div>
+            <div>Voto: {Math.floor(media.rate / 2) + 1} / 5</div>
           </div>
         </div>
       </div>

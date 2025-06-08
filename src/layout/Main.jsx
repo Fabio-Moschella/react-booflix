@@ -6,10 +6,11 @@ function Main() {
   return (
     <div className="container">
       <div className="row">
+        <h1 className="text-danger mt-3">MOVIES </h1>
         {movies.map((movie) => {
           return <BooflixCard media={movie} />;
         })}
-        <hr />
+        <h1 className="text-danger">SERIES TV</h1>
         {series.map((serie) => {
           return <BooflixCard media={serie} />;
         })}
