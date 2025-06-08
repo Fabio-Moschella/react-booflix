@@ -26,7 +26,9 @@ function BooflixCard({ media }) {
           </div>
           <div className="card-text mb-3 text-light ">{media.lang}</div>
 
-          <div className="card-text mb-3 text-light">{media.rate}</div>
+          <div className="card-text mb-3 text-light">
+            {Math.floor(media.rate / 2) + 1}
+          </div>
         </div>
       </div>
     </div>
